@@ -55,3 +55,9 @@ Source information : http://bit.ly/2onnLIc
     sudo pip3 install jupyter jupyterlab
     sudo jupyter labextension install @jupyter-widgets/jupyterlab-manager
     jupyter lab --generate-config
+    sudo jupyter --build
+
+# Run jupyter lab
+
+    jupyter notebook --ip=0.0.0.0   //for running jupyter
+    link to start on Jetson Nano : http://192.168.55.1:8888/lab? or http://127.0.0.1:8888/lab?
