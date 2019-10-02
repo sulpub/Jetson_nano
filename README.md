@@ -41,7 +41,7 @@ To activate it, it nesessary to do this
 
 ![Jetson enable desktop sharing](https://github.com/sulpub/Jetson_nano/blob/master/images/jetson_nano_desktop_sharing.png)
 
-Source information : https://blog.hackster.io/getting-started-with-the-nvidia-jetson-nano-developer-kit-43aa7c298797
+Source information : http://bit.ly/2onnLIc
 
 
 # Install jupyter lab
