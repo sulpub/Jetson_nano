@@ -18,6 +18,10 @@ There are 4 stages for start using the dev board :
 3. Setup the first boot with SD card, keyboard, mouse and ethernet connexions.
 4. Test Jetson nano environment.
 
+Note : For my board version, the lastest file not work. The correct file is the jetson-nano-sd-r32.1-2019-03-18.zip.
+
+Link ISO jetson nano r32.1-2019-03-18 : (https://nvidia.box.com/shared/static/dp7xma0f4jbvttha6xo14km14fztal7o.zip)
+
 # Enable desktop sharing of embedded UBUNTU
 
 By default there are somes problems to enable desktop sharing.
