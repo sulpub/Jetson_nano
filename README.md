@@ -17,3 +17,37 @@ There are 4 stages for start using the dev board :
 2. Download the ISO file and install it on an SD card.
 3. Setup the first boot with SD card, keyboard, mouse and ethernet connexions.
 4. Test Jetson nano environment.
+
+# Enable desktop sharing of embedded UBUNTU
+
+By default there are somes problems to enable desktop sharing.
+
+To activate it, it nesessary to do this
+1. Edit the Xml file like : **sudo nano /usr/share/glib-2.0/schemas/org.gnome.Vino.gschema.xml**
+2. Add this part on the XML file :
+```
+<key name='enabled' type='b'>
+   <summary>Enable remote access to the desktop</summary>
+   <description>
+   If true, allows remote access to the desktop via the RFB
+   protocol. Users on remote machines may then connect to the
+   desktop using a VNC viewer.
+   </description>
+   <default>false</default>
+</key>
+```
+3. Compile the Gnome schema with : **sudo glib-compile-schemas /usr/share/glib-2.0/schemas**
+4. After this, you can enable desktop sharing.
+
+![Jetson enable desktop sharing](https://github.com/sulpub/Jetson_nano/blob/master/images/jetson_nano_desktop_sharing.png)
+
+Source information : https://blog.hackster.io/getting-started-with-the-nvidia-jetson-nano-developer-kit-43aa7c298797
+
+
+# Install jupyter lab
+
+    sudo apt install nodejs npm
+    sudo apt install python3-pip
+    sudo pip3 install jupyter jupyterlab
+    sudo jupyter labextension install @jupyter-widgets/jupyterlab-manager
+    jupyter lab --generate-config
