@@ -61,3 +61,17 @@ Source information : http://bit.ly/2onnLIc
 
     jupyter notebook --ip=0.0.0.0   //for running jupyter
     link to start on Jetson Nano : http://192.168.55.1:8888/lab? or http://127.0.0.1:8888/lab?
+    
+# Tensorflow on Jetson nano
+Nvidia official TensorFlow release for Jetson Nano! (Python3.6+JetPack4.2.1)
+
+    $ sudo apt-get install libhdf5-serial-dev hdf5-tools libhdf5-dev zlib1g-dev zip libjpeg8-dev
+    $ sudo apt-get install python3-pip
+    $ sudo pip3 install -U pip
+    $ sudo pip3 install -U numpy grpcio absl-py py-cpuinfo psutil portpicker six mock requests gast h5py astor termcolor protobuf keras-applications keras-preprocessing wrapt google-pasta
+    $ sudo pip3 install --pre --extra-index-url https://developer.download.nvidia.com/compute/redist/jp/v42 tensorflow-gpu==1.14.0+nv19.7
+
+DL frameworks - https://developer.nvidia.com/deep-learning-frameworks
+Download - https://developer.qa.nvidia.com/embedded/downloads#?search=tensorflow
+Installation guide - https://docs.nvidia.com/deeplearning/frameworks/install-tf-jetson-platform/index.html
+Release note - https://docs.nvidia.com/deeplearning/dgx/install-tf-xavier-release-notes/index.html
