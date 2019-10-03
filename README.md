@@ -72,6 +72,32 @@ Nvidia official TensorFlow release for Jetson Nano! (Python3.6+JetPack4.2.1)
     $ sudo pip3 install --pre --extra-index-url https://developer.download.nvidia.com/compute/redist/jp/v42 tensorflow-gpu==1.14.0+nv19.7
 
 DL frameworks - https://developer.nvidia.com/deep-learning-frameworks
+
 Download - https://developer.qa.nvidia.com/embedded/downloads#?search=tensorflow
+
 Installation guide - https://docs.nvidia.com/deeplearning/frameworks/install-tf-jetson-platform/index.html
+
 Release note - https://docs.nvidia.com/deeplearning/dgx/install-tf-xavier-release-notes/index.html
+
+## JetCard
+
+JetCard is a system configuration that makes it easy to get started with AI. It comes pre-loaded with
+
+    A Jupyter Lab server that starts on boot for easy web programming
+
+    A script to display the Jetson's IP address (and other stats)
+
+    The popular deep learning frameworks PyTorch and TensorFlow
+
+After configuring your system using JetCard, you can get started prototyping AI projects from your web browser in Python.
+
+See also
+
+    **JetBot** - An educational AI robot based on NVIDIA Jetson Nano
+
+    **JetRacer** - An educational AI racecar using NVIDIA Jetson Nano
+
+    **JetCam** - An easy to use Python camera interface for NVIDIA Jetson
+
+    **torch2trt** - An easy to use PyTorch to TensorRT converter
+
