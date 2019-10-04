@@ -57,7 +57,9 @@ Source information : http://bit.ly/2onnLIc
     sudo jupyter labextension install @jupyterlab/statusbar
     jupyter lab --generate-config
     sudo jupyter --build
-    jupyter notebook password    
+    jupyter notebook password   
+
+Source : https://github.com/NVIDIA-AI-IOT/jetbot/wiki/Create-SD-Card-Image-From-Scratch
 
 # Run jupyter lab
 
