@@ -54,8 +54,10 @@ Source information : http://bit.ly/2onnLIc
     sudo apt install python3-pip
     sudo pip3 install jupyter jupyterlab
     sudo jupyter labextension install @jupyter-widgets/jupyterlab-manager
+    sudo jupyter labextension install @jupyterlab/statusbar
     jupyter lab --generate-config
     sudo jupyter --build
+    jupyter notebook password    
 
 # Run jupyter lab
 
