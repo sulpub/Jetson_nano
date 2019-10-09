@@ -106,7 +106,6 @@ To activate it, it nesessary to do this
 
 Source information : http://bit.ly/2onnLIc
 
-
 # Install jupyter lab
 
     sudo apt install nodejs npm
@@ -164,3 +163,16 @@ See also
 
     **torch2trt** - An easy to use PyTorch to TensorRT converter
 
+# utils
+
+## Temperature sensor
+
+To monitor temperature sensor
+
+**sudo apt install lm-sensor**
+
+after to know the temperature 
+
+**sensors**
+
+**tegrastats**
