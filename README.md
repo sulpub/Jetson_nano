@@ -24,9 +24,39 @@ Link ISO jetson nano r32.1-2019-03-18 : (https://nvidia.box.com/shared/static/dp
 
 # Enable and configure WIFI connexion
 
+## wifi package
+
 Add the wifi package with wpa
 
 **sudo apt-get install wpasupplicant wireless-tools**
+
+## wifi informations
+
+For testing if wifi card is blocked
+
+**sudo rfkill list**
+
+For unblock all wifi board :
+
+**sudo rfkill unblock all**
+
+For obtain list of network in console mode :
+
+**iw dev**
+
+For list the visible wifi network on wlan0 interface
+
+**sudo iw dev wlan0 scan**
+
+For see the status of the wifi connexion
+
+**sudo iw dev wlan0 link**
+
+For statistic infirmations on the acces point :
+
+**iw dev wlan0 station dump**
+
+## wifi configuration
 
 Edit interface file as well:
 
@@ -48,6 +78,8 @@ Restart the network for testing
 **sudo /etc/init.d/networking restart**
 
 Link for information : https://linuxconfig.org/setup-wireless-interface-with-wpa-and-wpa2-on-ubuntu
+
+Link for information : https://doc.ubuntu-fr.org/wifi
 
 # Enable desktop sharing of embedded UBUNTU
 
