@@ -22,6 +22,33 @@ Note : For my board version, the lastest file not work. The correct file is the 
 
 Link ISO jetson nano r32.1-2019-03-18 : (https://nvidia.box.com/shared/static/dp7xma0f4jbvttha6xo14km14fztal7o.zip)
 
+# Enable and configure WIFI connexion
+
+Add the wifi package with wpa
+
+**sudo apt-get install wpasupplicant wireless-tools**
+
+Edit interface file as well:
+
+**sudo nano /etc/network/interfaces**
+
+Enter this part :
+```
+auto wlan0
+iface wlan0 inet static
+       address 192.168.0.19
+       netmask 255.255.255.0
+       gateway 192.168.0.254
+       wpa-ssid "network-name"
+       wpa-psk "pre-shared-key"
+```
+
+Restart the network for testing
+
+**sudo /etc/init.d/networking restart**
+
+Link for information : https://linuxconfig.org/setup-wireless-interface-with-wpa-and-wpa2-on-ubuntu
+
 # Enable desktop sharing of embedded UBUNTU
 
 By default there are somes problems to enable desktop sharing.
