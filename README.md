@@ -179,14 +179,12 @@ after to know the temperature
 
 # NODE RED
 
-## intallqtion of NODE RED
+## intallation of NODE RED
 
-To install NODE RED go to this link : https://grafana.com/grafana/download?platform=arm
 
-run these command :
+To install NODE RED run these command :
 ```
-wget https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana_5.2.0-beta1_arm64.deb
-sudo dpkg -i grafana_5.2.0-beta1_arm64.deb
+sudo apt-get install nodered
 ```
 
 ## Autostart on boot
@@ -201,7 +199,12 @@ sudo systemctl disable nodered.service
 ```
 
 # INFLUXDB
-Pqckqge instqllation : 
+
+![Influxdb database](https://github.com/sulpub/Jetson_nano/blob/master/images/influxdb.JPG)
+
+## installation Influxdb
+
+Package installation : 
 ```
 sudo apt install influxdb
 ```
@@ -216,4 +219,16 @@ tar xvfz influxdb_2.0.0-alpha.18_linux_arm64.tar.gz
 Get started with influxdb : https://v2.docs.influxdata.com/v2.0/get-started/
 
 # GRAFANA
+
+![Grafana visualisation](https://github.com/sulpub/Jetson_nano/blob/master/images/grafana.JPG)
+
+## Grafana installation
+
+To install Grafana go to this link : https://grafana.com/grafana/download?platform=arm
+
+run these command :
+```
+wget https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana_5.2.0-beta1_arm64.deb
+sudo dpkg -i grafana_5.2.0-beta1_arm64.deb
+```
 
