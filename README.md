@@ -176,3 +176,44 @@ after to know the temperature
 **sensors**
 
 **tegrastats**
+
+# NODE RED
+
+## intallqtion of NODE RED
+
+To install NODE RED go to this link : https://grafana.com/grafana/download?platform=arm
+
+run these command :
+```
+wget https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana_5.2.0-beta1_arm64.deb
+sudo dpkg -i grafana_5.2.0-beta1_arm64.deb
+```
+
+## Autostart on boot
+
+If you want Node-RED to run when the Pi is turned on, or re-booted, you can enable the service to autostart by running the command:
+```
+sudo systemctl enable nodered.service
+```
+To disable the service, run the command:
+```
+sudo systemctl disable nodered.service
+```
+
+# INFLUXDB
+Pqckqge instqllation : 
+```
+sudo apt install influxdb
+```
+Or for manual installation, to install influxdb on Jetson you can go to the web site : https://portal.influxdata.com/downloads/
+
+Run these command for ARM 64 bit
+```
+wget https://dl.influxdata.com/influxdb/releases/influxdb_2.0.0-alpha.18_linux_arm64.tar.gz
+tar xvfz influxdb_2.0.0-alpha.18_linux_arm64.tar.gz
+```
+
+Get started with influxdb : https://v2.docs.influxdata.com/v2.0/get-started/
+
+# GRAFANA
+
