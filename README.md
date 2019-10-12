@@ -218,6 +218,33 @@ tar xvfz influxdb_2.0.0-alpha.18_linux_arm64.tar.gz
 
 Get started with influxdb : https://v2.docs.influxdata.com/v2.0/get-started/
 
+## add data on the database
+
+For adding new database run influxdb in command line as well
+```
+ influx -port 8090
+```
+You can see some command for create a database
+```
+CREATE DATABASE base_name
+
+SHOW DATABASES  //to see database name
+```
+
+You can manage the retention pilicy with these commands :
+```
+CREATE RETENTION POLICY "one_year" ON base_name DURATION 365d REPLICATION 1 DEFAULT //for database retention
+
+RETENTION POLICY "one_year" ON nom_base DURATION 365d REPLICATION 1 DEFAULT        //for create retention policy Ex:1year=365days
+
+ALTER RETENTION POLICY "one_year" ON "nom_base" DURATION 24h REPLICATION 1  //replace policy retention ex:1year->24h
+
+DROP RETENTION POLICY "one_year" ON "nom_base" //delete retention policy
+
+SHOW RETENTION POLICIES ON base_name
+
+```
+
 # GRAFANA
 
 ![Grafana visualisation](https://github.com/sulpub/Jetson_nano/blob/master/images/grafana.JPG)
