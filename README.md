@@ -273,3 +273,22 @@ wget https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana_5.2.0-b
 sudo dpkg -i grafana_5.2.0-beta1_arm64.deb
 ```
 
+# INSTALL APACHE with php
+
+Use this command to install apache
+
+```
+sudo apt install apache2
+```
+
+Use this command to install PHP
+
+```
+sudo apt install php php-mbstring
+```
+
+Use this command to install MySQL avec php
+
+```
+sudo apt install mysql-server php-mysql
+```
