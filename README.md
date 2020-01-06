@@ -292,3 +292,29 @@ Use this command to install MySQL avec php
 ```
 sudo apt install mysql-server php-mysql
 ```
+
+Change the file property with this command on the directory /var/www/html
+
+```
+cd /var/www/html
+sudo chown -Rf www-data:www-data .
+sudo chmod -Rf 777 .
+```
+
+Run the web server with this command
+
+```
+sudo service apache2 start
+```
+
+For managing the mysql data base you can install the PhpMyAdmin tool with this command
+
+```
+//for install phpmyadmin
+sudo apt install phpmyadmin
+//validate all information and set a password for acces to the mysql
+
+//for create a link to the phpmyadmin directory
+sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin
+
+```
