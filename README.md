@@ -177,6 +177,51 @@ See also
 
     **torch2trt** - An easy to use PyTorch to TensorRT converter
 
+## Poblem for open webcam
+
+When you try to test your webcam on jupyterlab and you have this error :
+```
+RuntimeError Traceback (most recent call last)
+/usr/local/lib/python3.6/dist-packages/jetcam-0.0.0-py3.6.egg/jetcam/usb_camera.py in __init__(self, *args, **kwargs)
+23 if not re:
+---> 24 raise RuntimeError('Could not read image from camera.')
+25
+
+RuntimeError: Could not read image from camera.
+
+During handling of the above exception, another exception occurred:
+
+RuntimeError Traceback (most recent call last)
+<ipython-input-1-3869f3f89e04> in <module>
+1 from jetcam.usb_camera import USBCamera
+2
+----> 3 camera = USBCamera(width=224, height=224, capture_width=640, capture_height=480, capture_device=1)
+
+/usr/local/lib/python3.6/dist-packages/jetcam-0.0.0-py3.6.egg/jetcam/usb_camera.py in __init__(self, *args, **kwargs)
+26 except:
+27 raise RuntimeError(
+---> 28 'Could not initialize camera. Please see error trace.')
+29
+30 atexit.register(self.cap.release)
+
+RuntimeError: Could not initialize camera. Please see error trace. 
+```
+
+Use this correction :
+```
+if your opencv is not installed with jetpack ,you should modified code
+in the file usb_camera.py, line 20
+
+#self.cap = cv2.VideoCapture(self._gst_str(), cv2.CAP_GSTREAMER)
+self.cap = cv2.VideoCapture(self.capture_device)
+
+then reinstall jetcam, camera should be OK
+
+if the file is an *.egg file convert him into zip after extract the zip and modify the usb_camera.py
+/usr/local/lib/python3.6/dist-packages/jetcam-0.0.0-py3.6.egg/jetcam/usb_camera.py
+
+```
+
 # utils
 
 ## Temperature sensor
