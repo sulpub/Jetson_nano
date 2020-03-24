@@ -363,3 +363,85 @@ sudo apt install phpmyadmin
 sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin
 
 ```
+
+# REPLACE SDCARD BY EXTERNAL USB DRIVE (USB3)
+
+Use these commands for booting the jetson nano on USB external drive
+
+Install
+
+You should do this on a freshly flashed Micro SD card. You can use a 16GB card for this process. In the video, we use a Samsung T5 500 GB USB SSD. On the JetsonHacksNano account on Github, there is a repository named rootOnUSB. Clone the repository, and then switch to the repositories directory:
+```
+    $ git clone https://github.com/JetsonHacksNano/rootOnUSB
+
+    $ cd rootOnUSB
+```
+This is a 4 step process.
+
+## Step 1
+
+Build the initramfs with USB support, so that USB is available early in the boot process. A convenience script named addUSBToInitramfs.sh provides this functionality.
+```
+    $ ./addUSBToInitramfs.sh
+```
+
+## Step 2
+
+Prepare a USB drive (preferably USB 3.0, SSD, HDD, or SATA->USB) by formatting the disk as ext4 with a partition. In the video, we use the ‘Disks’ application. It is easier if you only plug in one USB drive during this procedure. When finished, the disk should show as /dev/sda1 or similar. Note: Make sure that the partition is ext4, as NTSF will appear to copy correctly but cause issues later on. Typically it is easiest to set the volume label for later use during this process.
+
+## Step 3
+
+Copy the application area of the micro SD card to the USB drive. copyRootToUSB.sh copies the contents of the entire system micro SD card to the USB drive. Naturally, the USB drive storage should be larger than the micro SD card. Note: Make sure that the USB drive is mounted before running the script. In order to copyRootToUSB:
+
+usage: ./copyRootToUSB.sh [OPTIONS]
+
+  -d | --directory     Directory path to parent of kernel
+
+  -v | --volume_label  Label of Volume to lookup
+
+  -p | --path          Device Path to USB drive (e.g. /dev/sda1)
+
+  -h | --help  This message
+
+In the video, we:
+```
+    $ ./copyRootToUSB.sh -p /dev/sda1
+```
+Remember to mount the USB drive before attempting to copy.
+
+## Step 4
+
+Modify the /boot/extlinux/extlinux.conf file. An entry should be added to point to the new rootfs (typically this is /dev/sda1). There is a sample configuration file: sample-extlinux.conf
+
+You should make a backup of the original extlinux.conf file. Also, when you edit the file you should make a backup of the original configuration and relabel the backup. This will allow you to access an alternate boot method from the serial console in case something goes sideways.
+
+Then you should changed the INITRD line to:
+
+INITRD /boot/initrd-xusb.img
+
+So that the system uses the initramfs that we built that includes the USB firmware. Then set the root to the USB drive.
+
+Here are some examples. You can set the drive by the UUID of the disk drive, the volume label of the drive, or the device path:
+
+APPEND ${cbootargs} root=UUID=0e437280-bea0-42a2-967f-a240dd3075eb rootwait rootfstype=ext4
+APPEND ${cbootargs} root=LABEL=JetsonNanoSSD500 rootwait rootfstype=ext4
+APPEND ${cbootargs} root=/dev/sda1 rootwait rootfstype=ext4
+
+The first entry is most specific, the last most generic. Note that you are not guaranteed that a USB device is enumerated in a certain order and will always have the same device path. That is, if you leave another USB drive plugged in along with your root disk when you boot the Jetson, the root disk may have a different path than originally, such as /dev/sdb1.
+
+Also, there is a convenience file: diskUUID.sh which will determine the UUID of a given device. This is useful for example to determine the UUID of the USB drive. Note: If the UUID returned is not similar in length to the above example, then it is likely that the device is not formatted as ext4.
+
+```
+    $ ./diskUUID.sh
+```
+
+While this defaults to sda1 (/dev/sda1), you can also determine other drive UUIDs. The /dev/ is assumed, use the -d flag. For example:
+
+```
+    $ ./diskUUID.sh -d sdb1
+```
+
+You may find this information useful for setting up the extlinux.conf file
+Reboot and Enjoy!
+
+Source : https://www.jetsonhacks.com/2019/09/17/jetson-nano-run-from-usb-drive/
