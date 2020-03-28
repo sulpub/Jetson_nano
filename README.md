@@ -265,7 +265,8 @@ sudo systemctl disable nodered.service
 
 Package installation : 
 ```
-sudo apt install influxdb
+sudo apt install influxdb  //for server
+sudo apt install influxdb-client //for client for adding database
 ```
 Or for manual installation, to install influxdb on Jetson you can go to the web site : https://portal.influxdata.com/downloads/
 
