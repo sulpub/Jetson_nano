@@ -446,3 +446,26 @@ You may find this information useful for setting up the extlinux.conf file
 Reboot and Enjoy!
 
 Source : https://www.jetsonhacks.com/2019/09/17/jetson-nano-run-from-usb-drive/
+
+# ADD BLUETOOTH AUDIO PROFILE
+
+I summarized the key words here.
+
+```
+sudo apt update
+sudo apt install pulseaudio pulseaudio-utils pavucontrol pulseaudio-module-bluetooth
+```
+
+and then modify the bluetooth service
+```
+sudo nano /etc/systemd/system/bluetooth.target.wants/bluetooth.service
+
+ ExecStart=/usr/lib/bluetooth/bluetoothd -d --noplugin=audio,a2dp,avrcp
+ into
+ ExecStart=/usr/lib/bluetooth/bluetoothd -d --noplugin=audio,avrcp
+```
+and reboot
+
+```
+sudo reboot
+```
