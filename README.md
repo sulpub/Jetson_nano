@@ -326,8 +326,9 @@ SHOW MEASUREMENTS   //to see measurment
 
 SHOW FIELD KEYS  //list the data format
 
-
-
+//delete data with time condition :
+USE "database_name"
+DELETE FROM "name"  WHERE time < 1615282155000000000  
 ```
 
 # GRAFANA
