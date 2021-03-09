@@ -305,6 +305,31 @@ SHOW RETENTION POLICIES ON base_name
 
 ```
 
+Special commands :
+
+link : https://docs.influxdata.com/influxdb/v1.8/query_language/manage-database/#delete-a-database-with-drop-database
+
+```
+DROP DATABASE <database_name>   //erase database
+
+SHOW DATABASES   //list all database
+
+CREATE DATABASE "database_name"   //create database
+
+USE "database_name"  /acitave the database for request
+
+DROP MEASUREMENT <measurement_name>  //erase all data on a database
+
+ - example : DROP MEASUREMENT "msg.measurement"
+
+SHOW MEASUREMENTS   //to see measurment
+
+SHOW FIELD KEYS  //list the data format
+
+
+
+```
+
 # GRAFANA
 
 ![Grafana visualisation](https://github.com/sulpub/Jetson_nano/blob/master/images/grafana.JPG)
