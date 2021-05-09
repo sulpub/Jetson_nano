@@ -1,7 +1,16 @@
 # Jetson_nano
 Nvidia Jetson nano development board informations.
 
-# Start with Jetson nano board
+
+**__________________________ SOMMAIRE _____________________________**
+
+* [Start with Jetson nano board](#start_jetson)
+* [Install node RED](#install_node_red)
+* [Install influxdb](#install_influxdb)
+* [Install grafana](#install_grafana)
+
+# <a id="start_jetson">Start with Jetson nano board</a>
+
 ## Power the board
 For power the board there are two way :
  1. Power with micro usb connector with the power limitation 5V/2A. In this case you can't have a lot of peripheral because 
@@ -236,7 +245,7 @@ after to know the temperature
 
 **tegrastats**
 
-# NODE RED
+# <a id="install_node_red">NODE RED</a>
 
 ## intallation of NODE RED
 
@@ -257,7 +266,7 @@ To disable the service, run the command:
 sudo systemctl disable nodered.service
 ```
 
-# INFLUXDB
+# <a id="install_influxdb">INFLUXDB</a>
 
 ![Influxdb database](https://github.com/sulpub/Jetson_nano/blob/master/images/influxdb.JPG)
 
@@ -341,7 +350,7 @@ $ docker run -p 8086:8086 \
       influxdb:1.8
 ```
 
-# GRAFANA
+# <a id="install_grafana">GRAFANA</a>
 
 ![Grafana visualisation](https://github.com/sulpub/Jetson_nano/blob/master/images/grafana.JPG)
 
