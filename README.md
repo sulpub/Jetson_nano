@@ -8,8 +8,10 @@ Nvidia Jetson nano development board informations.
 * [Install node RED](#install_node_red)
 * [Install influxdb](#install_influxdb)
 * [Install grafana](#install_grafana)
+* [Install APACHE with PHP](#install_apache_php)
 
-# <a id="start_jetson">Start with Jetson nano board</a>
+
+# <a id="start_jetson">START WITH JETSON BOARD</a>
 
 ## Power the board
 For power the board there are two way :
@@ -364,7 +366,21 @@ wget https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana_5.2.0-b
 sudo dpkg -i grafana_5.2.0-beta1_arm64.deb
 ```
 
-# INSTALL APACHE with php
+## installation grafana with docker
+
+command pull docker : 
+
+```
+docker pull grafana/grafana
+```
+
+command for launch grafana with docker : 
+
+```
+docker run -d --name=grafana -p 3000:3000 grafana/grafana
+```
+
+# <a id="install_apache_php">INSTALL APACHE with php</a>
 
 Use this command to install apache
 
