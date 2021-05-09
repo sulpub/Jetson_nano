@@ -331,6 +331,16 @@ USE "database_name"
 DELETE FROM "name"  WHERE time < 1615282155000000000  
 ```
 
+## installation Influxdb docker 1.x
+
+command docker : 
+
+```
+$ docker run -p 8086:8086 \
+      -v $PWD:/var/lib/influxdb \
+      influxdb:1.8
+```
+
 # GRAFANA
 
 ![Grafana visualisation](https://github.com/sulpub/Jetson_nano/blob/master/images/grafana.JPG)
