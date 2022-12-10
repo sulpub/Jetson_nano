@@ -9,7 +9,7 @@ Nvidia Jetson nano development board informations.
 * [Install influxdb](#install_influxdb)
 * [Install grafana](#install_grafana)
 * [Install APACHE with PHP](#install_apache_php)
-
+* [Resize SD card](#resizeSdCard)
 
 # <a id="start_jetson">START WITH JETSON BOARD</a>
 
@@ -529,4 +529,35 @@ and reboot
 
 ```
 sudo reboot
+```
+
+# <a id="resizeSdCard">Resize SD card</a>
+
+If you want to extand the sd card size you can run these command (repalce 32GB sd card to 64GB after cloning the system):
+
+With the command **df -h** you can get the path of the partition for example "/dev/mmcblk0p1      59G     26G   30G  47% /"
+
+```
+//to see the size of the partition
+df -h
+//change the partition file 
+sudo fdisk /dev/mmcblk0
+ p -> to see the correct device for example /dev/mmcblk0p1
+ d -> for deleting partition 1
+ 1 -> enter the first partition
+ n -> for create new partition
+ 1 -> recreate the first partion with the new size
+ clik enter twice for gett all the parition size 
+ Do you want to remove the signature respond **No**
+ p -> to see the new partition size
+ w -> for writing the new partition
+
+//reboot the system
+sudo reboot
+
+//after reboot run the command to expand the partition
+ df -h  -> to see that the partition size not expand
+ sudo resize2fs /dev/mmcblk0p1  -> expande the parition for axample 32GB to 64GB
+ df -h  -> to control the the partition have been resize
+
 ```
