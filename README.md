@@ -9,7 +9,7 @@ Nvidia Jetson nano development board informations.
 * [Install influxdb](#install_influxdb)
 * [Install grafana](#install_grafana)
 * [Install APACHE with PHP](#install_apache_php)
-* [Resize SD card](#resizeSdCard)
+* [Resize SD card](#resize_sd_card)
 
 # <a id="start_jetson">START WITH JETSON BOARD</a>
 
@@ -531,7 +531,7 @@ and reboot
 sudo reboot
 ```
 
-# <a id="resizeSdCard">Resize SD card</a>
+# <a id="resize_sd_card">Resize SD card</a>
 
 If you want to extand the sd card size you can run these command (repalce 32GB sd card to 64GB after cloning the system):
 
